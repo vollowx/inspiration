@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Windows 10 updating</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      var count = 0;
+      var stage = 1;
+      var stage2 = 3;
+      var counter = setInterval(timer, 8000);
+      var ref = "Configuring updates";
+      function timer() {
+        count = count + 1;
+        if (count <= 0) {
+          clearInterval(counter);
+          return;
+        }
+        document.getElementById("timer").innerHTML = count + "%";
+      }
+    </script>
+    <style>
+      *,
+      ::after,
+      ::before {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", "Microsoft Yahei", sans-serif;
+        box-sizing: border-box;
+        cursor: none;
+      }
+      body {
+        position: relative;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #010101;
+        user-select: none;
+      }
+      .container {
+        height: 70px;
+        display: flex;
+        width: 500px;
+        font-size: 20px;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+        user-select: none;
+      }
+      p {
+        text-align: center;
+        width: 100%;
+      }
+      .middle-contents {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+      .progress-animation {
+        display: block;
+        margin-bottom: 48px;
+        position: relative;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        transform: translateX(-100%);
+      }
+      .progress-animation span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: i 4666ms infinite;
+      }
+      .progress-animation span:after {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+      .progress-animation span:nth-child(1) {
+        animation-delay: 0.18s;
+      }
+      .progress-animation span:nth-child(2) {
+        animation-delay: 0.36s;
+      }
+      .progress-animation span:nth-child(3) {
+        animation-delay: 0.54s;
+      }
+      .progress-animation span:nth-child(4) {
+        animation-delay: 0.72s;
+      }
+      .progress-animation span:nth-child(5) {
+        animation-delay: 0.9s;
+      }
+      .progress-animation span:nth-child(6) {
+        animation-delay: 1.08s;
+      }
+      @keyframes i {
+        0% {
+          opacity: 1;
+          transform: rotate(180deg);
+          animation-timing-function: cubic-bezier(0.29, 0.44, 0.32, 0.74);
+        }
+        7% {
+          opacity: 1;
+          transform: rotate(300deg);
+          animation-timing-function: linear;
+        }
+        30% {
+          opacity: 1;
+          transform: rotate(450deg);
+          animation-timing-function: cubic-bezier(0.53, 0.27, 0.37, 0.81);
+        }
+        39% {
+          opacity: 1;
+          transform: rotate(645deg);
+          animation-timing-function: linear;
+        }
+        63% {
+          opacity: 1;
+          transform: rotate(800deg);
+          animation-timing-function: cubic-bezier(0.5, 0.32, 0.82, 0.54);
+        }
+        68% {
+          opacity: 1;
+          transform: rotate(920deg);
+          animation-timing-function: ease-in;
+        }
+        69% {
+          opacity: 0;
+          transform: rotate(920deg);
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(900deg);
+        }
+      }
+      .bottom-text {
+        position: fixed;
+        left: 0;
+        bottom: 10%;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="middle-contents">
+        <div class="progress-animation">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p><span id="timer">0%</span> is being updated</p>
+        <p>Please don't turn off the computer and do this will take a certain time.</p>
+      </div>
+      <div class="bottom-text">Your computer will restart a few times.</div>
+    </div>
+  </body>
+</html>

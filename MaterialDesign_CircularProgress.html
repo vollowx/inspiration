@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes container-rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes fill-unfill-rotate {
+        12.5% {
+          transform: rotate(135deg);
+        }
+        25% {
+          transform: rotate(270deg);
+        }
+        37.5% {
+          transform: rotate(405deg);
+        }
+        50% {
+          transform: rotate(540deg);
+        }
+        62.5% {
+          transform: rotate(675deg);
+        }
+        75% {
+          transform: rotate(810deg);
+        }
+        87.5% {
+          transform: rotate(945deg);
+        }
+        100% {
+          transform: rotate(1080deg);
+        }
+      }
+      @keyframes left-spin {
+        0% {
+          transform: rotate(130deg);
+        }
+        50% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(130deg);
+        }
+      }
+      @keyframes right-spin {
+        0% {
+          transform: rotate(-130deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+        100% {
+          transform: rotate(-130deg);
+        }
+      }
+      :root {
+        --md-color-primary: 234, 221, 255;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #171717;
+      }
+      .md-circular-progress__indeterminate-container {
+        width: 36px;
+        height: 36px;
+        animation: container-rotate 1568ms linear infinite;
+        direction: ltr;
+      }
+      .md-circular-progress__spinner-layer {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        white-space: nowrap;
+        color: var(--md-circular-progress-color, rgb(var(--md-color-primary)));
+        animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .md-circular-progress__circle-clipper {
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .md-circular-progress__circle-clipper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 200%;
+        border-radius: 50%;
+        border-width: 4px;
+        border-style: solid;
+        border-bottom-color: transparent !important;
+        box-sizing: border-box;
+      }
+      .md-circular-progress__circle-clipper::after {
+        animation-duration: 1333ms;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        animation-iteration-count: infinite;
+      }
+      .md-circular-progress__circle-clipper.left::after {
+        left: 0;
+        border-right-color: transparent !important;
+        transform: rotate(129deg);
+        animation-name: left-spin;
+      }
+      .md-circular-progress__circle-clipper.right::after {
+        right: 0;
+        border-left-color: transparent !important;
+        transform: rotate(-129deg);
+        animation-name: right-spin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="md-circular-progress__indeterminate-container">
+      <div class="md-circular-progress__spinner-layer">
+        <div class="md-circular-progress__circle-clipper left"></div>
+        <div class="md-circular-progress__circle-clipper right"></div>
+      </div>
+    </div>
+  </body>
+</html>

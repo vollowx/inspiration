@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>A Dark Room Style</title>
+    <link rel="stylesheet" href="./adr.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="dr-app-bar">
+      <div class="dr-app-bar__title">A Dark Room Style</div>
+      <div class="dr-dwmenu">
+        <div class="dr-dwmenu__slide">
+          <button class="dr-dwmenu__option">Minecraft</button>
+          <button class="dr-dwmenu__option">Undertale</button>
+          <button class="dr-dwmenu__option">Forager</button>
+          <div class="dr-dwmenu__label">Games</div>
+        </div>
+      </div>
+      <div class="dr-dwmenu">
+        <div class="dr-dwmenu__slide">
+          <button class="dr-dwmenu__option">Visual Studio Code</button>
+          <button class="dr-dwmenu__option">Visual Studio</button>
+          <button class="dr-dwmenu__option">Sublime</button>
+          <button class="dr-dwmenu__option">Vim</button>
+          <button class="dr-dwmenu__option">Atom</button>
+          <div class="dr-dwmenu__label">Editors</div>
+        </div>
+      </div>
+      <div class="dr-app-bar__spacer"></div>
+      <div class="dr-dwmenu">
+        <div class="dr-dwmenu__slide">
+          <button class="dr-dwmenu__option">English</button>
+          <button class="dr-dwmenu__option">Deutsch</button>
+          <button class="dr-dwmenu__option">Français</button>
+          <button class="dr-dwmenu__option">中文 (简体)</button>
+          <button class="dr-dwmenu__option">中文 (繁體)</button>
+          <button class="dr-dwmenu__option">日本語</button>
+          <div class="dr-dwmenu__label">Languages</div>
+        </div>
+      </div>
+      <button class="dr-button" onClick="toggleTheme();">Toggle Theme</button>
+    </header>
+    <main class="dr-app-bar__content">
+      <section>
+        <h1>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</h1>
+        <div>
+          <button class="dr-chip">English</button>
+          <button class="dr-chip">Technology</button>
+          <select class="dr-select" name="pets" id="pet-select">
+            <option value=""> - </option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster">Hamster</option>
+            <option value="parrot">Parrot</option>
+            <option value="spider">Spider</option>
+            <option value="goldfish">Goldfish</option>
+          </select>
+        </div>
+        <article>
+          <p class="dr-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum nisi urna, et consequat felis viverra vitae. Proin eros ex, dignissim nec gravida id, cursus eget odio. Etiam congue sollicitudin sapien et euismod. Nullam erat nisl, venenatis ut nunc id, consequat dapibus elit. Nullam nec fermentum purus, sed tristique velit. Maecenas rutrum odio in gravida tempor. Duis nec nibh consequat, tincidunt risus in, faucibus mi. Phasellus laoreet erat consectetur neque tempor vehicula. Nulla facilisi. Phasellus augue justo, rhoncus fringilla tempor efficitur, ultricies sed nulla. Donec molestie et lectus quis ultricies. Vivamus sed luctus dolor. Integer ipsum velit, elementum eget placerat ut, condimentum sed nibh. Nam suscipit turpis at urna blandit ultrices. Morbi hendrerit nisl elementum elit scelerisque posuere. Aliquam eu interdum arcu.</p>
+          <p class="dr-p">Pellentesque sollicitudin metus id tellus gravida, a dictum ex commodo. Aliquam venenatis turpis et ante porta, et ullamcorper quam molestie. Suspendisse elementum lacus et libero cursus fermentum. Cras placerat lobortis orci sed convallis. Aenean tellus turpis, placerat ac leo id, eleifend bibendum diam. Aliquam pulvinar id mauris tincidunt rutrum. Aenean sed sem consectetur, pretium turpis sit amet, faucibus odio. Curabitur et mi vel libero condimentum volutpat.</p>
+          <p class="dr-p">Suspendisse potenti. Donec ligula mauris, auctor vel orci fringilla, gravida laoreet risus. Ut a iaculis ipsum. Sed eu laoreet nulla. Mauris vitae neque orci. Vestibulum vestibulum ut leo porttitor bibendum. Nulla vehicula cursus laoreet. Donec a purus sit amet orci sagittis consequat eget ac dolor. Morbi sed elit in velit fringilla blandit et et metus. Sed scelerisque ultricies tortor, et vehicula purus eleifend ut. Fusce placerat sodales leo, eu vestibulum urna maximus vitae. Praesent pellentesque urna metus, ac blandit ante hendrerit et. Cras vel purus quis turpis euismod fringilla auctor pretium mi. Sed sodales ipsum non lorem congue, sed vulputate erat suscipit. Mauris non elementum metus.</p>
+          <p class="dr-p">Phasellus nec purus malesuada, rhoncus odio interdum, feugiat felis. Aenean gravida pretium nunc, vitae luctus diam semper at. Morbi ultricies iaculis ante ac ultricies. Donec elit elit, venenatis nec feugiat nec, cursus vitae ligula. Morbi mattis fringilla leo, ac accumsan elit fermentum ac. Nullam tincidunt magna eu ornare malesuada. Nam porta ac neque id efficitur. Donec congue vulputate augue non consectetur. Morbi et fermentum magna. Nullam vel justo augue. Fusce fringilla semper eros sit amet dictum. Maecenas eu tortor id ligula euismod congue. Sed elementum congue risus, id posuere nunc euismod non. Mauris erat nibh, eleifend at pharetra sit amet, imperdiet ac risus. Ut bibendum ornare elit eu auctor.</p>
+          <p class="dr-p">Duis arcu dui, porta a efficitur in, suscipit in diam. Etiam ac sapien at orci faucibus condimentum vitae vitae libero. Ut vel metus accumsan, egestas nunc et, sodales magna. Duis egestas lorem in nisl iaculis, eget vestibulum metus posuere. Nunc vulputate tortor nec mauris maximus luctus. Cras lacus eros, tempus quis leo at, vehicula ultricies mi. Donec eget suscipit sem, a sodales odio. Sed vehicula neque eu sodales commodo. Fusce sapien ante, tincidunt pharetra quam iaculis, tempus dignissim nisl. Etiam molestie ante turpis, eget rhoncus felis fringilla in. Pellentesque consequat orci sem, quis placerat nisl placerat nec. Duis at quam eu lorem aliquam condimentum. Donec consequat convallis quam eget pulvinar. Aliquam varius consectetur suscipit.</p>
+          <p class="dr-p">Duis hendrerit mauris erat, at viverra justo sodales scelerisque. Nunc vitae mauris non nunc congue fringilla. Sed imperdiet, nisl ut vulputate fringilla, eros sem porta ex, sed tristique lorem libero in urna. Nam rhoncus iaculis erat, tincidunt tincidunt sem gravida in. Morbi velit lacus, convallis vitae faucibus at, porta vitae lacus. Proin rhoncus scelerisque ornare. Aenean ex mauris, mollis id interdum vel, imperdiet vel urna. Quisque luctus turpis et lacus pulvinar mollis.</p>
+          <p class="dr-p">Vivamus quis velit pretium ante placerat scelerisque. Morbi massa mi, maximus in aliquam euismod, cursus nec lorem. Vivamus a risus eu urna convallis condimentum sed nec lacus. Cras semper eleifend tellus a scelerisque. Nunc euismod mauris eget quam ornare egestas. Vivamus placerat elementum ligula, ullamcorper molestie libero. Duis id pharetra est. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus nec purus vehicula, vulputate est id, maximus tellus. Donec vitae maximus erat. Duis felis erat, pretium nec finibus vitae, aliquam sit amet elit. Vestibulum porta vel magna non rutrum. Aenean quis ullamcorper arcu. Suspendisse rutrum, turpis sit amet vehicula vehicula, metus sapien ultricies eros, at tristique massa magna eget justo. Morbi finibus gravida neque eu ullamcorper. Vestibulum consequat nulla eu porta tincidunt.</p>
+          <p class="dr-p">Proin lobortis tellus vitae ex consectetur pulvinar. Nam est magna, euismod nec nisl eget, scelerisque bibendum massa. Quisque lorem diam, feugiat et augue sed, aliquet sodales est. Donec id augue turpis. Donec ut quam aliquet, efficitur lacus vel, tristique neque. Sed ut viverra tortor. Vestibulum ullamcorper malesuada diam, in tristique risus condimentum ut. Proin ut tellus eget dolor bibendum iaculis ut nec augue. Sed est turpis, vehicula varius luctus ut, consequat eget magna.</p>
+          <p class="dr-p">Nam eget odio pellentesque, pretium risus sed, scelerisque ex. Aliquam dictum arcu id mi varius posuere. Donec accumsan orci eu ornare tempor. Ut eu imperdiet elit. Vestibulum et volutpat massa, at venenatis velit. Maecenas ut velit luctus libero iaculis tempus id quis sem. Quisque mattis ligula a posuere ultricies. Aenean sed pharetra eros. In magna tellus, laoreet sit amet tellus ac, ornare interdum massa. In in tellus nec ligula volutpat cursus. Curabitur ut arcu eget libero mollis porta sed sed mauris.</p>
+          <p class="dr-p">Proin feugiat tortor finibus, placerat sapien ut, eleifend diam. Morbi non risus sed ex fringilla tempor a aliquam nibh. Maecenas elementum mi vel gravida ultricies. In placerat aliquet velit sit amet finibus. Aliquam quam tortor, ultrices vel tempor id, mollis quis tellus. Curabitur a justo neque. Sed vitae quam diam. Ut quis semper ante, vitae posuere lorem. Vivamus dignissim metus at suscipit feugiat. Sed libero nunc, semper vitae lorem nec, convallis vehicula dui. Maecenas vulputate vulputate eros. Donec id pharetra ligula. Nunc ut ante tellus.</p>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const colorSchemeController = document.querySelector("meta[name='color-scheme']");
+      function toggleTheme() {
+        if (colorSchemeController.getAttribute("content") === "light") {
+          colorSchemeController.setAttribute("content", "dark");
+        } else {
+          colorSchemeController.setAttribute("content", "light");
+        }
+      }
+      onscroll = () => {
+        if (scrollY > 0) {
+          document.body.classList.add("dr-app--scrolled");
+        } else {
+          document.body.classList.remove("dr-app--scrolled");
+        }
+      };
+    </script>
+  </body>
+</html>
