@@ -13,7 +13,7 @@ const appStart = () => {
   const treeEl = document.querySelector('#tree');
   const XHR = new XMLHttpRequest();
 
-  XHR.open('GET', './_.json');
+  XHR.open('GET', './data.json');
   XHR.send();
   XHR.onload = () => {
     if (XHR.status === 200) {
