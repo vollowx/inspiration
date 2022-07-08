@@ -1,6 +1,7 @@
 const ButtonBasicStyle = `
   :host {
-    display: inline-block;
+    flex-shrink: 0;
+    display: inline-flex;
     outline: none;
     appearance: none;
   }
