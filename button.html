@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Button</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./components/button/button.js"></script>
+  </head>
+  <body>
+    <mw-button>Using slot</mw-button>
+    <mw-button label="Using label attribute"></mw-button>
+    <mw-button tabindex="-1">No tabindex</mw-button>
+    <mw-button onclick="this.nextElementSibling.focus()">Click to focus next button</mw-button>
+    <mw-button onclick="this.previousElementSibling.focus()">Click to focus previous button</mw-button>
+    <mw-button disabled>Disabled</mw-button>
+  </body>
+</html>
