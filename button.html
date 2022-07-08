@@ -7,9 +7,11 @@
     <script type="module" src="./components/button/button.js"></script>
   </head>
   <body>
+    <p>Supported <code>aria-label</code>, <code>aria-haspopup</code>, <code>aria-controls</code>, <code>aria-expanded</code></p>
     <mw-button>Using slot</mw-button>
     <mw-button label="Using label attribute"></mw-button>
-    <mw-button tabindex="-1">No tabindex</mw-button>
+    <mw-button label="Custom ARIA label" data-aria-label="This button is using custom ARIA label"></mw-button>
+    <mw-button label="Tab index is -1" tabindex="-1"></mw-button>
     <mw-button onclick="this.nextElementSibling.focus()">Click to focus next button</mw-button>
     <mw-button onclick="this.previousElementSibling.focus()">Click to focus previous button</mw-button>
     <mw-button disabled>Disabled</mw-button>

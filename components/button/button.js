@@ -26,7 +26,20 @@ export default class Button extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['disabled', 'aria-label', 'aria-haspopup', 'label', 'leading-icon', 'trailing-icon'];
+    return [
+      'disabled',
+      'aria-label',
+      'data-aria-label',
+      'aria-haspopup',
+      'data-aria-haspopup',
+      'aria-controls',
+      'data-aria-controls',
+      'aria-expanded',
+      'data-aria-expanded',
+      'label',
+      'leading-icon',
+      'trailing-icon',
+    ];
   }
   /**
    * @returns {boolean}
@@ -39,6 +52,34 @@ export default class Button extends HTMLElement {
    */
   set disabled(value) {
     this.toggleAttribute('disabled', value);
+  }
+
+  get ariaLabel() {
+    return this.getAttribute('data-aria-label');
+  }
+  set ariaLabel(value) {
+    this.setAttribute('data-aria-label', value);
+  }
+
+  get ariaHasPopup() {
+    return this.getAttribute('data-aria-haspopup');
+  }
+  set ariaHasPopup(value) {
+    this.setAttribute('data-aria-haspopup', value);
+  }
+
+  get ariaControls() {
+    return this.getAttribute('data-aria-controls');
+  }
+  set ariaControls(value) {
+    this.setAttribute('data-aria-controls', value);
+  }
+
+  get ariaExpanded() {
+    return this.getAttribute('data-aria-expanded');
+  }
+  set ariaExpanded(value) {
+    this.setAttribute('data-aria-expanded', value);
   }
 
   get label() {
@@ -144,10 +185,47 @@ export default class Button extends HTMLElement {
     this.#renderTemplate();
   }
   disconnectedCallback() {}
+  /**
+   * @param {string} name
+   * @param {string|undefined} oldValue
+   * @param {string|undefined} newValue
+   * @returns {void}
+   */
   attributeChangedCallback(name, oldValue, newValue) {
-    if (!this.#rendered) {
-      return;
+    // Before render
+
+    switch (name) {
+      case 'aria-label':
+        if (!newValue) return;
+        this.ariaLabel = newValue;
+        this.removeAttribute('aria-label');
+        break;
+
+      case 'aria-haspopup':
+        if (!newValue) return;
+        this.ariaHasPopup = newValue;
+        this.removeAttribute('aria-haspopup');
+        break;
+
+      case 'aria-controls':
+        if (!newValue) return;
+        this.ariaControls = newValue;
+        this.removeAttribute('aria-controls');
+        break;
+
+      case 'aria-expanded':
+        if (!newValue) return;
+        this.ariaExpanded = newValue;
+        this.removeAttribute('aria-expanded');
+        break;
+
+      default:
+        break;
     }
+
+    if (!this.#rendered) return;
+
+    // After render
 
     switch (name) {
       case 'disabled':
@@ -160,20 +238,21 @@ export default class Button extends HTMLElement {
         if (!this.ariaLabel) {
           this.buttonElement.ariaLabel = this.label;
         }
+        break;
 
-      case 'aria-label':
+      case 'data-aria-label':
         this.buttonElement.ariaLabel = this.ariaLabel || this.label;
         break;
 
-      case 'aria-haspopup':
+      case 'data-aria-haspopup':
         this.buttonElement.ariaHasPopup = this.ariaHasPopup ? this.ariaHasPopup : '';
         break;
 
-      case 'aria-controls':
+      case 'data-aria-controls':
         this.buttonElement.ariaControls = this.ariaControls || '';
         break;
 
-      case 'aria-expanded':
+      case 'data-aria-expanded':
         this.buttonElement.ariaExpanded = this.ariaExpanded ? this.ariaExpanded : '';
         break;
 
