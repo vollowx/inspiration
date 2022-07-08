@@ -2,10 +2,5 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: 16px;
-}
-
-details {
-  padding: 0 48px;
 }
