@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trap Focus</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <button id="active">Active</button>
+    <div class="trap-focus">
+      <span tabindex="0" class="before-focus"></span>
+      <button>Inner button</button>
+      <button>Inner button</button>
+      <input type="text" name="inner-input" id="inner-input" placeholder="Inner input" />
+      <a href="#">Inner Link</a>
+      <button id="inactive">Inactive</button>
+      <span tabindex="0" class="after-focus"></span>
+    </div>
+    <button>Outer button</button>
+    <button id="key-times">Key times</button>
+    <button id="repeat-btn">Repeat button</button>
+    <span id="n">0</span>
+
+    <script>
+      class FocusTrap {
+        /**
+         * @param {HTMLElement} el
+         */
+        constructor(el, activeEl) {
+          this.el = el;
+          this.activeEl = activeEl;
+          this.beforeFocus = el.querySelector('.before-focus');
+          this.afterFocus = el.querySelector('.after-focus');
+          this.beforeFocus.addEventListener('focus', this.handleBeforeFocus.bind(this));
+          this.afterFocus.addEventListener('focus', this.handleAfterFocus.bind(this));
+        }
+        active = true;
+        changeActive(value) {
+          this.active = value;
+          if (this.active) {
+            this.focusFirstEl();
+            this.beforeFocus.tabIndex = 0;
+            this.afterFocus.tabIndex = 0;
+          } else {
+            this.activeEl.focus();
+            this.beforeFocus.tabIndex = -1;
+            this.afterFocus.tabIndex = -1;
+          }
+        }
+        acceptedFocusableElTagName = ['BUTTON', 'INPUT', 'SELECT', 'TEXTAREA'];
+        checkFocusable(el) {
+          let accept = false;
+          if (el.tagName === 'A' && el.href) {
+            accept = true;
+          } else if (this.acceptedFocusableElTagName.includes(el.tagName)) {
+            accept = true;
+          }
+          return accept;
+        }
+        focusFirstEl() {
+          let allEls = box.querySelectorAll('*');
+          let temp = allEls[0];
+          while (!this.checkFocusable(temp)) {
+            temp = temp.nextElementSibling;
+          }
+          temp.focus();
+        }
+        focusLastEl() {
+          let allEls = box.querySelectorAll('*');
+          let temp = allEls[allEls.length - 1];
+          while (!this.checkFocusable(temp)) {
+            temp = temp.previousElementSibling;
+          }
+          temp.focus();
+        }
+        /**
+         * @param {FocusEvent} e
+         */
+        handleBeforeFocus(e) {
+          if (!this.active) return;
+          e.preventDefault();
+          if (this.el.contains(e.relatedTarget)) {
+            this.focusLastEl(e);
+          } else {
+            this.focusFirstEl(e);
+          }
+        }
+        /**
+         * @param {FocusEvent} e
+         */
+        handleAfterFocus(e) {
+          if (!this.active) return;
+          e.preventDefault();
+          if (this.el.contains(e.relatedTarget)) {
+            this.focusFirstEl(e);
+          } else {
+            this.focusLastEl(e);
+          }
+        }
+      }
+
+      const box = document.querySelector('.trap-focus');
+      const active = document.querySelector('#active');
+      const inactive = document.querySelector('#inactive');
+      const focusTrap = new FocusTrap(box, active);
+      focusTrap.changeActive(false);
+      active.addEventListener('click', () => {
+        focusTrap.changeActive(true);
+      });
+      inactive.addEventListener('click', () => {
+        focusTrap.changeActive(false);
+      });
+
+      const keyTimes = document.querySelector('#key-times');
+      keyTimes.addEventListener('keydown', (e) => {
+        console.log(new Date().getMilliseconds());
+      });
+
+      const repeatBtn = document.querySelector('#repeat-btn');
+      var accept = false;
+      repeatBtn.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        accept = false;
+        repeatBtn.do();
+        let interval = setInterval(() => {
+          if (!accept) return;
+          repeatBtn.do();
+        }, 30);
+        setTimeout(() => {
+          accept = true;
+        }, 500);
+        repeatBtn.addEventListener('mouseup', (e) => {
+          clearInterval(interval);
+          accept = false;
+        });
+      });
+      repeatBtn.do = () => {
+        console.log('do');
+        document.querySelector('#n').innerText = parseInt(document.querySelector('#n').innerText) + 1;
+      };
+    </script>
+  </body>
+</html>
