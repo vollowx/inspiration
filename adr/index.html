@@ -80,8 +80,10 @@
       function toggleTheme() {
         if (colorSchemeController.getAttribute("content") === "light") {
           colorSchemeController.setAttribute("content", "dark");
+          document.documentElement.classList.add('dr-dark');
         } else {
           colorSchemeController.setAttribute("content", "light");
+          document.documentElement.classList.remove('dr-dark');
         }
       }
       onscroll = () => {

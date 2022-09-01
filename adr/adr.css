@@ -1,7 +1,17 @@
 :root {
   --dr-app-bar-height: 56px;
   --dr-primary-rgb: 103, 80, 164;
-  transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --dr-surface-rgb: 255, 255, 266;
+  --dr-on-surface-rgb: 23, 23, 23;
+  transition: color 180ms cubic-bezier(0, 1, 0, 1), background 180ms cubic-bezier(0, 1, 0, 1);
+}
+.dr-dark {
+  --dr-surface-rgb: 23, 23, 23;
+  --dr-on-surface-rgb: 255, 255, 255;
+}
+body {
+  color: rgb(var(--dr-on-surface-rgb));
+  background-color: rgb(var(--dr-surface-rgb));
 }
 ::selection {
   background-color: rgba(var(--dr-primary-rgb), 0.16);
@@ -39,7 +49,7 @@ body {
   box-sizing: border-box;
   user-select: none;
   z-index: 4;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 180ms cubic-bezier(0, 1, 0, 1);
 }
 .dr-app--scrolled .dr-app-bar {
   background-color: rgba(var(--dr-primary-rgb), 0.16);
@@ -65,7 +75,7 @@ body {
   user-select: none;
 }
 .dr-dwmenu::before {
-  content: "";
+  content: '';
   position: fixed;
   top: var(--dr-app-bar-height);
   left: 0;
@@ -77,7 +87,7 @@ body {
   filter: invert(100%);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 300ms;
+  transition: opacity 180ms;
   transition-delay: 0ms;
 }
 .dr-dwmenu__label {
@@ -86,13 +96,13 @@ body {
   line-height: var(--dr-app-bar-height);
   font-size: 1rem;
   font-weight: 400;
-  transition: font-size 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: font-size 240ms cubic-bezier(0, 1, 0, 1), opacity 240ms cubic-bezier(0, 1, 0, 1);
   transition-delay: 0ms;
 }
 .dr-dwmenu__slide {
   display: flex;
   flex-direction: column;
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 240ms cubic-bezier(0, 1, 0, 1);
   transition-delay: 0ms;
   transform: translateY(calc(-100% + var(--dr-app-bar-height)));
 }
@@ -104,26 +114,33 @@ body {
   cursor: pointer;
 }
 .dr-dwmenu__option:first-child {
-  transition: margin-top 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: margin-top 180ms cubic-bezier(0, 1, 0, 1);
 }
-.dr-dwmenu__option:hover {
+.dr-dwmenu__option:hover,
+.dr-dwmenu__option:focus-visible {
+  color: rgb(var(--dr-surface-rgb));
+  background-color: rgb(var(--dr-on-surface-rgb));
   text-decoration: underline;
 }
-.dr-dwmenu:hover::before {
+.dr-dwmenu:hover::before,
+.dr-dwmenu:focus-within::before {
   opacity: 0.64;
-  transition-delay: 300ms;
+  transition-delay: 180ms;
 }
-.dr-dwmenu:hover .dr-dwmenu__slide {
-  transition-delay: 200ms;
+.dr-dwmenu:hover .dr-dwmenu__slide,
+.dr-dwmenu:focus-within .dr-dwmenu__slide {
+  transition-delay: 180ms;
   transform: translateY(0);
 }
-.dr-dwmenu:hover .dr-dwmenu__option:first-child {
+.dr-dwmenu:hover .dr-dwmenu__option:first-child,
+.dr-dwmenu:focus-within .dr-dwmenu__option:first-child {
   margin-top: calc((var(--dr-app-bar-height) - 24px) / 2);
 }
-.dr-dwmenu:hover .dr-dwmenu__label {
+.dr-dwmenu:hover .dr-dwmenu__label,
+.dr-dwmenu:focus-within .dr-dwmenu__label {
   font-size: 0.875rem;
   opacity: 0.8;
-  transition-delay: 200ms;
+  transition-delay: 180ms;
 }
 .dr-action {
   all: unset;
@@ -153,14 +170,17 @@ body {
   background: rgba(var(--dr-primary-rgb), 0.16);
   border-radius: 8px;
   border: 1px solid rgba(128, 128, 128, 0.5);
+  outline-width: 0;
+  outline-color: rgba(var(--dr-primary-rgb), 0.56);
+  outline-style: solid;
   cursor: pointer;
-  transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), outline 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 180ms cubic-bezier(0, 1, 0, 1), outline 180ms cubic-bezier(0, 1, 0, 1);
 }
 .dr-button:hover {
   background: rgba(var(--dr-primary-rgb), 0.24);
 }
 .dr-button:focus-visible {
-  outline: 2px solid rgba(var(--dr-primary-rgb), 0.56);
+  outline-width: 2px;
 }
 .dr-button:active {
   background: rgba(var(--dr-primary-rgb), 0.32);
@@ -186,7 +206,7 @@ body {
   border-bottom: 1px rgb(var(--dr-primary-rgb)) solid;
   border-radius: 3px 3px 0 0;
   cursor: pointer;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 180ms cubic-bezier(0, 1, 0, 1);
 }
 .dr-link:hover {
   background: rgba(var(--dr-primary-rgb), 0.16);
