@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-md-theme="system">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>?</title>
+    <link rel="stylesheet" href="./material-you/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --md-sys-color-primary-rgb-dark: 255, 180, 166;
+        --md-sys-color-primary-dark: #ffb4a6;
+        --md-sys-color-on-primary-rgb-dark: 95, 21, 10;
+        --md-sys-color-on-primary-dark: #5f150a;
+        --md-sys-color-primary-container-rgb-dark: 125, 44, 30;
+        --md-sys-color-primary-container-dark: #7d2c1e;
+        --md-sys-color-on-primary-container-rgb-dark: 255, 218, 212;
+        --md-sys-color-on-primary-container-dark: #ffdad4;
+        --md-sys-color-secondary-rgb-dark: 231, 189, 181;
+        --md-sys-color-secondary-dark: #e7bdb5;
+        --md-sys-color-on-secondary-rgb-dark: 68, 42, 37;
+        --md-sys-color-on-secondary-dark: #442a25;
+        --md-sys-color-secondary-container-rgb-dark: 93, 63, 58;
+        --md-sys-color-secondary-container-dark: #5d3f3a;
+        --md-sys-color-on-secondary-container-rgb-dark: 255, 218, 212;
+        --md-sys-color-on-secondary-container-dark: #ffdad4;
+        --md-sys-color-tertiary-rgb-dark: 221, 196, 140;
+        --md-sys-color-tertiary-dark: #ddc48c;
+        --md-sys-color-on-tertiary-rgb-dark: 61, 46, 4;
+        --md-sys-color-on-tertiary-dark: #3d2e04;
+        --md-sys-color-tertiary-container-rgb-dark: 85, 69, 25;
+        --md-sys-color-tertiary-container-dark: #554519;
+        --md-sys-color-on-tertiary-container-rgb-dark: 250, 224, 166;
+        --md-sys-color-on-tertiary-container-dark: #fae0a6;
+        --md-sys-color-error-rgb-dark: 255, 180, 171;
+        --md-sys-color-error-dark: #ffb4ab;
+        --md-sys-color-on-error-rgb-dark: 105, 0, 5;
+        --md-sys-color-on-error-dark: #690005;
+        --md-sys-color-error-container-rgb-dark: 147, 0, 10;
+        --md-sys-color-error-container-dark: #93000a;
+        --md-sys-color-on-error-container-rgb-dark: 255, 180, 171;
+        --md-sys-color-on-error-container-dark: #ffb4ab;
+        --md-sys-color-background-rgb-dark: 32, 26, 25;
+        --md-sys-color-background-dark: #201a19;
+        --md-sys-color-on-background-rgb-dark: 237, 224, 221;
+        --md-sys-color-on-background-dark: #ede0dd;
+        --md-sys-color-surface-rgb-dark: 32, 26, 25;
+        --md-sys-color-surface-dark: #201a19;
+        --md-sys-color-on-surface-rgb-dark: 237, 224, 221;
+        --md-sys-color-on-surface-dark: #ede0dd;
+        --md-sys-color-surface-variant-rgb-dark: 83, 67, 64;
+        --md-sys-color-surface-variant-dark: #534340;
+        --md-sys-color-on-surface-variant-rgb-dark: 216, 194, 190;
+        --md-sys-color-on-surface-variant-dark: #d8c2be;
+        --md-sys-color-outline-rgb-dark: 160, 140, 137;
+        --md-sys-color-outline-dark: #a08c89;
+        --md-sys-color-shadow-rgb-dark: 0, 0, 0;
+        --md-sys-color-shadow-dark: #000000;
+        --md-sys-color-inverse-surface-rgb-dark: 237, 224, 221;
+        --md-sys-color-inverse-surface-dark: #ede0dd;
+        --md-sys-color-inverse-on-surface-rgb-dark: 54, 47, 45;
+        --md-sys-color-inverse-on-surface-dark: #362f2d;
+        --md-sys-color-inverse-primary-rgb-dark: 156, 66, 51;
+        --md-sys-color-inverse-primary-dark: #9c4233;
+        --md-sys-color-primary-rgb-light: 156, 66, 51;
+        --md-sys-color-primary-light: #9c4233;
+        --md-sys-color-on-primary-rgb-light: 255, 255, 255;
+        --md-sys-color-on-primary-light: #ffffff;
+        --md-sys-color-primary-container-rgb-light: 255, 218, 212;
+        --md-sys-color-primary-container-light: #ffdad4;
+        --md-sys-color-on-primary-container-rgb-light: 63, 3, 0;
+        --md-sys-color-on-primary-container-light: #3f0300;
+        --md-sys-color-secondary-rgb-light: 119, 86, 80;
+        --md-sys-color-secondary-light: #775650;
+        --md-sys-color-on-secondary-rgb-light: 255, 255, 255;
+        --md-sys-color-on-secondary-light: #ffffff;
+        --md-sys-color-secondary-container-rgb-light: 255, 218, 212;
+        --md-sys-color-secondary-container-light: #ffdad4;
+        --md-sys-color-on-secondary-container-rgb-light: 44, 21, 17;
+        --md-sys-color-on-secondary-container-light: #2c1511;
+        --md-sys-color-tertiary-rgb-light: 111, 92, 46;
+        --md-sys-color-tertiary-light: #6f5c2e;
+        --md-sys-color-on-tertiary-rgb-light: 255, 255, 255;
+        --md-sys-color-on-tertiary-light: #ffffff;
+        --md-sys-color-tertiary-container-rgb-light: 250, 224, 166;
+        --md-sys-color-tertiary-container-light: #fae0a6;
+        --md-sys-color-on-tertiary-container-rgb-light: 37, 26, 0;
+        --md-sys-color-on-tertiary-container-light: #251a00;
+        --md-sys-color-error-rgb-light: 186, 26, 26;
+        --md-sys-color-error-light: #ba1a1a;
+        --md-sys-color-on-error-rgb-light: 255, 255, 255;
+        --md-sys-color-on-error-light: #ffffff;
+        --md-sys-color-error-container-rgb-light: 255, 218, 214;
+        --md-sys-color-error-container-light: #ffdad6;
+        --md-sys-color-on-error-container-rgb-light: 65, 0, 2;
+        --md-sys-color-on-error-container-light: #410002;
+        --md-sys-color-background-rgb-light: 255, 251, 255;
+        --md-sys-color-background-light: #fffbff;
+        --md-sys-color-on-background-rgb-light: 32, 26, 25;
+        --md-sys-color-on-background-light: #201a19;
+        --md-sys-color-surface-rgb-light: 255, 251, 255;
+        --md-sys-color-surface-light: #fffbff;
+        --md-sys-color-on-surface-rgb-light: 32, 26, 25;
+        --md-sys-color-on-surface-light: #201a19;
+        --md-sys-color-surface-variant-rgb-light: 245, 221, 217;
+        --md-sys-color-surface-variant-light: #f5ddd9;
+        --md-sys-color-on-surface-variant-rgb-light: 83, 67, 64;
+        --md-sys-color-on-surface-variant-light: #534340;
+        --md-sys-color-outline-rgb-light: 133, 115, 112;
+        --md-sys-color-outline-light: #857370;
+        --md-sys-color-shadow-rgb-light: 0, 0, 0;
+        --md-sys-color-shadow-light: #000000;
+        --md-sys-color-inverse-surface-rgb-light: 54, 47, 45;
+        --md-sys-color-inverse-surface-light: #362f2d;
+        --md-sys-color-inverse-on-surface-rgb-light: 251, 238, 235;
+        --md-sys-color-inverse-on-surface-light: #fbeeeb;
+        --md-sys-color-inverse-primary-rgb-light: 255, 180, 166;
+        --md-sys-color-inverse-primary-light: #ffb4a6;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        padding-bottom: 24px;
+        min-width: 280px;
+        max-width: 560px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        background: var(--md-sys-elevation-surface-3);
+        transform-origin: top center;
+        transform: translate(-50%, -50%) var(--transform);
+        border-radius: 32px;
+        transition: var(--transition);
+        z-index: 5;
+        outline: 0;
+
+        opacity: var(--opacity);
+      }
+      .dialog__root {
+        --offset: translateY(50%);
+        --transform: scaleY(0) translateY(-24px);
+        --transform-inv: scaleY(2);
+        --opacity: 0;
+        --transition: 200ms cubic-bezier(0.2, 0, 0, 1);
+      }
+      .dialog__body {
+        padding: 24px 24px 0 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: inherit;
+        transform: var(--transform-inv) var(--offset);
+        opacity: var(--opacity);
+      }
+      .dialog__footer {
+        padding: 24px 24px 0 24px;
+        gap: 8px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transition: inherit;
+        transform: var(--transform-inv);
+        opacity: var(--opacity);
+      }
+      .dialog__root.show {
+        --offset: ;
+        --transform: scaleY(1);
+        --transform-inv: scaleY(1);
+        --opacity: 1;
+        --transition: 500ms cubic-bezier(0.05, 0.7, 0.1, 1);
+      }
+      .dialog__overlay {
+        position: fixed;
+        inset: 0;
+        background-color: #000000;
+        transition: var(--transition);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 4;
+      }
+      .dialog__root.show .dialog__overlay {
+        opacity: 0.24;
+        pointer-events: auto;
+      }
+      .dialog h2,
+      .dialog p {
+        margin: 0;
+      }
+      .dialog .dialog__icon + h2,
+      .dialog h2 + p {
+        margin-top: 16px;
+      }
+      .dialog__icon {
+        margin: auto;
+        font-size: 24px;
+        color: var(--md-sys-color-secondary);
+      }
+      .dialog h2 {
+        color: var(--md-sys-color-on-surface);
+      }
+      .dialog p {
+        color: var(--md-sys-color-on-surface-variant);
+      }
+    </style>
+    <script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script>
+  </head>
+  <body>
+    <button class="icon-button standard show-dialog" aria-label="Delete selected messages">
+      <span class="focus-ring"></span>
+      <i class="material-symbols-outlined">delete</i>
+    </button>
+    <div class="dialog__root">
+      <div
+        class="dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="title"
+        aria-describedby="content"
+        style="display: none"
+      >
+        <div class="dialog__body">
+          <i class="material-symbols-outlined dialog__icon">delete</i>
+          <h2 class="headline-small" id="title">Permanently delete?</h2>
+          <p class="body-medium" id="content">
+            Deleting the selected messages will also remove them from all synced devices.
+          </p>
+        </div>
+        <div class="dialog__footer">
+          <button class="button label-large text">
+            <span class="focus-ring"></span>
+            Cancel
+          </button>
+          <button class="button label-large tonal">
+            <span class="focus-ring"></span>
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="dialog__overlay"></div>
+    </div>
+    <script>
+      addEventListener('DOMContentLoaded', () => {
+        const showDialog = document.querySelector('.show-dialog');
+        const dialogRoot = document.querySelector('.dialog__root');
+        const dialog = document.querySelector('.dialog');
+        const body = document.querySelector('.dialog__body');
+        const footer = document.querySelector('.dialog__footer');
+        const overlay = document.querySelector('.dialog__overlay');
+        const show = () => {
+          dialog.style.display = 'flex';
+          setTimeout(() => {
+            dialogRoot.classList.add('show');
+            dialogTrap.activate();
+            footer.children[1]?.focus();
+          }, 16);
+        };
+        const hide = () => {
+          dialogRoot.classList.remove('show');
+          dialogTrap.deactivate();
+          showDialog.focus();
+          setTimeout(() => {
+            dialog.style.display = 'none';
+          }, 200);
+        };
+        dialog.onkeydown = (e) => {
+          e.key === 'Escape' ? hide() : null;
+        };
+        showDialog.onclick = () => {
+          show();
+        };
+        overlay.onclick = () => {
+          hide();
+        };
+        [...footer.children].forEach(
+          (el) =>
+            (el.onclick = () => {
+              hide();
+            })
+        );
+        const dialogTrap = focusTrap.createFocusTrap(dialog, { allowOutsideClick: true });
+      });
+    </script>
+  </body>
+</html>
