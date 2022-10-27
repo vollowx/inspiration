@@ -49,11 +49,11 @@ p {
     opacity: 0.08;
   }
 }
-.button:active::before,
+/* .button:active::before,
 .fab:active:before,
 .icon-button:active:before {
   opacity: 0.12;
-}
+} */
 
 .table-wrapper {
   border: 1px solid var(--md-sys-color-surface-variant);
