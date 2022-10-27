@@ -158,8 +158,8 @@
         --md-dialog-transform: scaleY(0) translateY(-24px);
         --md-dialog-contents-anti-scale: scaleY(2);
         --md-dialog-opacity: 0;
-        --md-dialog-transition: 200ms opacity cubic-bezier(0.3, 0, 0.8, 0.15),
-          200ms transform cubic-bezier(0.3, 0, 0.8, 0.15);
+        --md-dialog-transition: 200ms opacity var(--md-sys-motion-easing-emphasized-accelerate),
+          200ms transform var(--md-sys-motion-easing-emphasized-accelerate);
       }
       .dialog__body {
         padding: 24px 24px 0 24px;
@@ -185,8 +185,8 @@
         --md-dialog-transform: scaleY(1);
         --md-dialog-contents-anti-scale: scaleY(1);
         --md-dialog-opacity: 1;
-        --md-dialog-transition: 500ms opacity cubic-bezier(0.05, 0.7, 0.1, 1),
-          500ms transform cubic-bezier(0.05, 0.7, 0.1, 1);
+        --md-dialog-transition: 500ms opacity var(--md-sys-motion-easing-emphasized),
+          500ms transform var(--md-sys-motion-easing-emphasized);
       }
       .dialog__overlay {
         position: fixed;
