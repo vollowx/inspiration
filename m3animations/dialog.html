@@ -234,14 +234,15 @@
     <div class="dialog__root">
       <div
         class="dialog"
-        role="alertdialog"
+        role="dialog"
+        tabindex="-1"
         aria-modal="true"
         aria-labelledby="title"
         aria-describedby="content"
         style="display: none"
       >
         <div class="dialog__body">
-          <i class="material-symbols-outlined dialog__icon">delete</i>
+          <i class="material-symbols-outlined dialog__icon" aria-hidden="true">delete</i>
           <h2 class="headline-small" id="title">Permanently delete?</h2>
           <p class="body-medium" id="content">
             Deleting the selected messages will also remove them from all synced devices.
