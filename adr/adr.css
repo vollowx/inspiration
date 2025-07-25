@@ -3,7 +3,9 @@
   --dr-primary-rgb: 120, 74, 154;
   --dr-surface-rgb: 255, 251, 255;
   --dr-on-surface-rgb: 29, 27, 30;
-  transition: color 180ms ease, background 180ms ease;
+  transition:
+    color 180ms ease,
+    background 180ms ease;
 }
 .dr-dark {
   --dr-primary-rgb: 225, 182, 255;
@@ -98,7 +100,9 @@ body {
   line-height: var(--dr-app-bar-height);
   font-size: 1rem;
   font-weight: 400;
-  transition: font-size 500ms ease, opacity 1s ease;
+  transition:
+    font-size 500ms ease,
+    opacity 1s ease;
 }
 .dr-menu__slide {
   display: flex;
@@ -122,6 +126,7 @@ body {
   color: rgb(var(--dr-surface-rgb));
   background-color: rgb(var(--dr-on-surface-rgb));
   transition: 0ms;
+  box-shadow: 0 0 20px 10px rgba(var(--dr-on-surface-rgb), 0.08);
 }
 .dr-menu:hover::before,
 .dr-menu:focus-within::before {
